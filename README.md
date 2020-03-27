@@ -2,11 +2,15 @@
 
 ## Overview
 
-Reverse proxy for exposing Ruby on Rails puma application server to the web.
+Reverse proxy configuration for exposing Ruby on Rails puma application server to the web.
 
 
 ## How to install
 
 Linux:
-- ```sudo apt-get update```
-- ```sudo apt-get install nginx```
+- Update packages ```sudo apt-get update```
+- Install nginx ```sudo apt-get install nginx```
+- Modify ```puma-server.conf``` <app-name> and directory to relate to configured rails application
+- Copy contents to ```puma-server.conf``` into ```/etc/nginx/sites-available/default``` (or site config file for your server)
+- Restart nginx server ```sudo service nginx restart```
+- Rails server should now be accessible through ip of server on standard HTTP port
